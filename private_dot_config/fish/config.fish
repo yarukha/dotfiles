@@ -161,6 +161,6 @@ if test -f ~/.opam
 end
 
 
-#graalvm conf
-#set -gx GRAALVM_HOME ~/Desktop/dev_random/graalvm-openjdk20
-#set -gx JAVA_HOME $GRAALVM_HOME
+if test -f ~/.local/share/chezmoi
+    chezmoi re-add
+end
