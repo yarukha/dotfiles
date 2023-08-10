@@ -16,7 +16,8 @@ local sources = {
   b.formatting.ocamlformat,
   b.formatting.latexindent,
 
-  b.formatting.nixpkgs_fmt
+  b.formatting.nixpkgs_fmt,
+  b.formatting.fish_indent,
 }
 
 null_ls.setup {
