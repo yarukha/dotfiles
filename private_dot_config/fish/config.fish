@@ -149,18 +149,18 @@ abbr -a -- gits git status
 abbr -a -- alac vim ~/.alacritty.yml
 
 #pyenv configuration
-if test -f ~/.pyenv
-    pyenv init - | source
-end
-
-
-# opam configuration
-if test -f ~/.opam
-    eval (opam env)
-    source /home/fxdx/.opam/opam-init/init.fish >/dev/null 2>/dev/null; or true
-end
-
-
-if test -f ~/.local/share/chezmoi
-    chezmoi re-add
-end
+# if test -f ~/.pyenv
+#     pyenv init - | source
+# end
+#
+#
+# # opam configuration
+# if test -f ~/.opam
+#     eval (opam env)
+#     source /home/fxdx/.opam/opam-init/init.fish >/dev/null 2>/dev/null; or true
+# end
+#
+#
+# if test -f ~/.local/share/chezmoi
+#     chezmoi re-add
+# end
