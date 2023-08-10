@@ -20,7 +20,11 @@ local plugins = {
       },
     },
   },
-    {
+  {
+    "NvChad/nvterm",
+    enabled=false,
+  },
+  {
     "neovim/nvim-lspconfig",
     dependencies = {
       -- format & linting
@@ -96,17 +100,6 @@ local plugins = {
     end,
     lazy = false,
   },
-  --
-  -- {
-  --   "f3fora/nvim-texlabconfig",
-  --   config = function()
-  --     require("texlabconfig").setup()
-  --   end,
-  --   -- ft = { 'tex', 'bib' }, -- Lazy-load on filetype
-  --   build = "go build -o ~/.local/bin",
-  --   lazy=false
-  --   -- build = 'go build -o ~/.bin/' if e.g. ~/.bin/ is in $PATH
-  -- },
 }
 
 return plugins
