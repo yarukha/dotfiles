@@ -22,7 +22,7 @@ local plugins = {
   },
   {
     "NvChad/nvterm",
-    enabled=false,
+    enabled = false,
   },
   {
     "neovim/nvim-lspconfig",
@@ -44,7 +44,7 @@ local plugins = {
   -- override plugin configs
   {
     "williamboman/mason.nvim",
-    opts = { ensure_installed = { "lua-language-server" } },
+    opts = { ensure_installed = { "lua-language-server", "marksman" } },
   },
 
   {

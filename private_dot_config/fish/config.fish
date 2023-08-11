@@ -147,6 +147,8 @@ set -gx TERMINAL alacritty
 abbr -a -- rr ranger
 abbr -a -- gits git status
 abbr -a -- alac vim ~/.alacritty.yml
+abbr -a -- cm chezmoi
+abbr -a -- relof source ~/.config/fish/config.fish
 
 #pyenv configuration
 # if test -f ~/.pyenv
