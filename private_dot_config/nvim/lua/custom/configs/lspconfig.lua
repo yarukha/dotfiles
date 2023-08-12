@@ -5,7 +5,7 @@ local capabilities = require("plugins.configs.lspconfig").capabilities
 local lspconfig = require "lspconfig"
 
 -- if you just want default config for the servers then put them in a table
-local servers = { "nil_ls", "clangd", "ocamllsp"}
+local servers = { "nil_ls", "clangd", "ocamllsp", "marksman", "yamlls", "bashls" }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
@@ -21,8 +21,15 @@ lspconfig.texlab.setup {
     texlab = {
       rootDirectory = nil,
       build = {
-        executable = "latexmk",
-        args = { "-pdf", "-interaction=nonstopmode", "--synctex=1", "%f" },
+        executable = "tectonic",
+        args = {
+          "-X",
+          "compile",
+          "%f",
+          "--synctex",
+          "--keep-logs",
+          "--keep-intermediates",
+        },
         onSave = true,
         forwardSearchAfter = false,
       },
@@ -45,11 +52,4 @@ lspconfig.texlab.setup {
       formatterLineLength = 80,
     },
   },
-}
-
-
-
-lspconfig.marksman.setup{
-  on_attach = on_attach,
-  capabilities = capabilities
 }

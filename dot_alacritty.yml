@@ -14,6 +14,8 @@ window:
      columns: 150
      lines: 50
 
+env: 
+  WINIT_X11_SCALE_FACTOR: "1"
 
 font:
   normal:
@@ -32,8 +34,6 @@ font:
     family: Fira Code Nerd Font
     style: Bold Italic
 
-  size: 17
+  size: 14
 
 
-env: 
-  WINIT_X11_SCALE_FACTOR: "1"

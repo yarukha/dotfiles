@@ -44,7 +44,7 @@ local plugins = {
   -- override plugin configs
   {
     "williamboman/mason.nvim",
-    opts = { ensure_installed = { "lua-language-server", "marksman" } },
+    opts = { ensure_installed = { "lua-language-server", "marksman","yaml-language-server","bash-language-server" } },
   },
 
   {

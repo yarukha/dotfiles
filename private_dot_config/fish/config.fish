@@ -156,11 +156,11 @@ abbr -a -- relof source ~/.config/fish/config.fish
 # end
 #
 #
-# # opam configuration
-# if test -f ~/.opam
-#     eval (opam env)
-#     source /home/fxdx/.opam/opam-init/init.fish >/dev/null 2>/dev/null; or true
-# end
+# opam configuration
+if test -d ~/.opam
+    eval (opam env)
+    source /home/fxdx/.opam/opam-init/init.fish >/dev/null 2>/dev/null; or true
+end
 #
 #
 # if test -f ~/.local/share/chezmoi
