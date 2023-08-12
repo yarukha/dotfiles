@@ -42,7 +42,9 @@ end
 
 
 ## Advanced command-not-found hook
-source /usr/share/doc/find-the-command/ftc.fish
+if test -d /usr/share/doc/find-the-command/
+    source /usr/share/doc/find-the-command/ftc.fish
+end
 
 
 ## Functions
