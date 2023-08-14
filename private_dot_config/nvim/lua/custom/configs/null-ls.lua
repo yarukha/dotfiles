@@ -14,7 +14,7 @@ local sources = {
   -- cpp
   b.formatting.clang_format,
   b.formatting.ocamlformat,
-  b.formatting.latexindent,
+  b.formatting.latexindent.with {args = {"-m","-"}},
 
   b.formatting.nixpkgs_fmt,
   b.formatting.fish_indent,

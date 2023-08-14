@@ -44,7 +44,7 @@ local plugins = {
   -- override plugin configs
   {
     "williamboman/mason.nvim",
-    opts = { ensure_installed = { "lua-language-server", "marksman","yaml-language-server","bash-language-server" } },
+    opts = { ensure_installed = { "lua-language-server", "marksman", "yaml-language-server", "bash-language-server" } },
   },
 
   {
@@ -99,6 +99,16 @@ local plugins = {
       require("Comment").setup {}
     end,
     lazy = false,
+  },
+
+  {
+    "f3fora/nvim-texlabconfig",
+    config = function()
+      require("texlabconfig").setup {}
+    end,
+    ft = { 'tex', 'bib' }, -- Lazy-load on filetype
+    build = "go build -o ~/.local/bin/",
+    -- build = 'go build -o ~/.bin/' if e.g. ~/.bin/ is in $PATH
   },
 }
 

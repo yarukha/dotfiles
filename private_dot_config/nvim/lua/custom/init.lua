@@ -11,3 +11,4 @@ vim.opt.scrolloff = 8
 vim.opt.spelllang = "fr"
 vim.opt.textwidth=100
 vim.opt.colorcolumn="100"
+vim.cmd([[command W :execute ':silent w !sudo tee % > /dev/null' | :edit!]])
