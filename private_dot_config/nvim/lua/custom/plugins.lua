@@ -1,4 +1,5 @@
 local overrides = require "custom.configs.overrides"
+local games = require "custom.games"
 
 ---@type NvPluginSpec[]
 local plugins = {
@@ -106,10 +107,11 @@ local plugins = {
     config = function()
       require("texlabconfig").setup {}
     end,
-    ft = { 'tex', 'bib' }, -- Lazy-load on filetype
+    ft = { "tex", "bib" }, -- Lazy-load on filetype
     build = "go build -o ~/.local/bin/",
     -- build = 'go build -o ~/.bin/' if e.g. ~/.bin/ is in $PATH
   },
+  games,
 }
 
 return plugins

@@ -30,7 +30,7 @@ lspconfig.texlab.setup {
           "--keep-logs",
           "--keep-intermediates",
         },
-        onSave = false,
+        onSave = true,
         forwardSearchAfter = false,
       },
       auxDirectory = ".",
