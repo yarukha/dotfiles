@@ -20,21 +20,6 @@ if test -f ~/.fish_profile
     source ~/.fish_profile
 end
 
-# Add ~/.local/bin to PATH
-if test -d ~/.local/bin
-    if not contains -- ~/.local/bin $PATH
-        set -p PATH ~/.local/bin
-    end
-end
-
-# Add depot_tools to PATH
-if test -d ~/Applications/depot_tools
-    if not contains -- ~/Applications/depot_tools $PATH
-        set -p PATH ~/Applications/depot_tools
-    end
-end
-
-
 ## Starship prompt
 if status --is-interactive
     starship init fish | source
@@ -151,6 +136,11 @@ abbr -a -- gits git status
 abbr -a -- alac vim ~/.alacritty.yml
 abbr -a -- cm chezmoi
 abbr -a -- relof source ~/.config/fish/config.fish
+alias upd="yes | yay -Syu"
+alias upd-ocaml="opam update && opam upgrade -y"
+alias upd-rust="cargo install-update a"
+alias upd-haskell="cabal update"
+abbr -a --position anywhere upd-all "upd && upd-ocaml && upd-haskell && upd-rust"
 
 #pyenv configuration
 # if test -f ~/.pyenv
@@ -163,6 +153,10 @@ if test -d ~/.opam
     eval (opam env)
     source /home/fxdx/.opam/opam-init/init.fish >/dev/null 2>/dev/null; or true
 end
+
+set -x PATH  ~/.cargo/bin/ ~/.opam/default/bin ~/.nix-profile/bin /nix/var/nix/profiles/default/bin ~/.nim /usr/lib/jvm/java-17-graalvm/bin  ~/.cabal/bin ~/.ghcup/bin /opt/ibm/ILOG/CPLEX_Studio201/cplex/bin/x86-64_linux/ ~/.pyenv/bin ~/.opam/default/bin ~/.local/bin /usr/local/bin /usr/bin /usr/local/sbin /usr/lib/jvm/default/bin /usr/bin/site_perl /usr/bin/vendor_perl /usr/bin/core_perl 
+
+
 #
 #
 # if test -f ~/.local/share/chezmoi

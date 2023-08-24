@@ -111,6 +111,10 @@ local plugins = {
     build = "go build -o ~/.local/bin/",
     -- build = 'go build -o ~/.bin/' if e.g. ~/.bin/ is in $PATH
   },
+  {
+    "kaarmu/typst.vim",
+    ft = "typst",
+  },
   games,
 }
 

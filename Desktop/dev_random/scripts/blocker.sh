@@ -1,16 +1,13 @@
 #!/bin/bash
-#
 filename=$1
-echo "Reading from $1"
-iptables-nft -F INPUT 
-iptables-nft -F OUTPUT 
-echo "Tables were reset"
+echo Start
+echo "resetting blocked adress"
+iptables -F INPUT 
+iptables -F OUTPUT 
 
 while read p; do 
-    iptables-nft -A INPUT -s $p -j DROP
-    iptables-nft -A OUTPUT -d $p -j REJECT
-    echo "Just blocked $p"
+    timeout 1 iptables -A INPUT -s $p -j DROP
+    timeout 1 iptables -A OUTPUT -d $p -j REJECT
+    echo "blocked $p"
   done < "$filename"
-
-
 

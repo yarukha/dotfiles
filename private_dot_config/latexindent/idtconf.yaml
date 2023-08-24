@@ -111,6 +111,9 @@ verbatimEnvironments:
     lstlisting: 1
     minted: 1
     aildesources: 1
+    aildesources-figure: 1
+    clang: 1
+    clang-figure: 1
 
 #  verbatim commands such as \verb! body !, \lstinline$something else$
 verbatimCommands:
@@ -193,6 +196,19 @@ lookForAlignDelims:
       dontMeasure: 0
       delimiterRegEx: (?<!\\)(&)
       delimiterJustification: left
+   transformation: 
+      delims: 1
+      alignDoubleBackSlash: 0
+      spacesBeforeDoubleBackSlash: 1
+      multiColumnGrouping: 1
+      alignRowsWithoutMaxDelims: 0
+      spacesBeforeAmpersand: 1
+      spacesAfterAmpersand: 1
+      justification: left
+      alignFinalDoubleBackSlash: 0
+      dontMeasure: 0
+      delimiterRegEx: (?<!\\)(&)
+      delimiterJustification: left
       lookForChildCodeBlocks: 1
    alignat: 1
    alignat*: 1
@@ -237,7 +253,21 @@ lookForAlignDelims:
    # tabularray
    tblr: 1
    longtblr: 1
-   talltblr: 1
+   talign*: 
+      delims: 1
+      alignDoubleBackSlash: 0
+      spacesBeforeDoubleBackSlash: 1
+      multiColumnGrouping: 1
+      alignRowsWithoutMaxDelims: 0
+      spacesBeforeAmpersand: 1
+      spacesAfterAmpersand: 1
+      justification: left
+      alignFinalDoubleBackSlash: 0
+      dontMeasure: 0
+      delimiterRegEx: (?<!\\)(&)
+      delimiterJustification: left
+      lookForChildCodeBlocks: 1
+alltblr: 1
 
 # if you want the script to look for \item commands
 # and format it, as follows (for example),
