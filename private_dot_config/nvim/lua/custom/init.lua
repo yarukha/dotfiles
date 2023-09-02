@@ -16,8 +16,7 @@ vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 
 vim.cmd [[command W :execute ':silent w !sudo tee % > /dev/null' | :edit!]]
 
-
-vim.filetype.add({ extension = { typ = 'typst' } }) 
+vim.filetype.add { extension = { typ = "typst" } }
 
 -- vim.api.nvim_create_autocmd({
 --   "BufWinLeave",

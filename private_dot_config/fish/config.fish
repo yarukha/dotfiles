@@ -141,11 +141,6 @@ alias upd-ocaml="opam update && opam upgrade -y"
 alias upd-rust="cargo install-update a"
 alias upd-haskell="cabal update"
 abbr -a --position anywhere upd-all "upd && upd-ocaml && upd-haskell && upd-rust"
-
-#pyenv configuration
-# if test -f ~/.pyenv
-#     pyenv init - | source
-# end
 #
 #
 # opam configuration
@@ -161,4 +156,7 @@ set -x PATH  ~/.cargo/bin/ ~/.opam/default/bin ~/.nix-profile/bin /nix/var/nix/p
 #
 # if test -f ~/.local/share/chezmoi
 #     chezmoi re-add
-# end
+# pyenv configuration
+if test -d ~/.pyenv
+    pyenv init - | source
+end
