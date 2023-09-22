@@ -27,9 +27,9 @@ end
 
 
 ## Advanced command-not-found hook
-if test -d /usr/share/doc/find-the-command/
-    source /usr/share/doc/find-the-command/ftc.fish
-end
+# if test -d /usr/share/doc/find-the-command/
+#     source /usr/share/doc/find-the-command/ftc.fish
+# end
 
 
 ## Functions
@@ -140,15 +140,10 @@ alias upd="yes | yay -Syu"
 alias upd-ocaml="opam update && opam upgrade -y"
 alias upd-rust="cargo install-update a"
 alias upd-haskell="cabal update"
-abbr -a --position anywhere upd-all "upd && upd-ocaml && upd-haskell && upd-rust"
+alias upd-nix="nix-channel --update; nix-env --install --attr nixpkgs.nix nixpkgs.cacert"
+abbr -a --position anywhere upd-all "upd && upd-ocaml && upd-haskell && upd-rust && upd-nix"
 #
 #
-# opam configuration
-if test -d ~/.opam
-    eval (opam env)
-    source /home/fxdx/.opam/opam-init/init.fish >/dev/null 2>/dev/null; or true
-end
-
 set -x PATH  ~/.cargo/bin/ ~/.opam/default/bin ~/.nix-profile/bin /nix/var/nix/profiles/default/bin ~/.nim /usr/lib/jvm/java-17-graalvm/bin  ~/.cabal/bin ~/.ghcup/bin /opt/ibm/ILOG/CPLEX_Studio201/cplex/bin/x86-64_linux/ ~/.pyenv/bin ~/.opam/default/bin ~/.local/bin /usr/local/bin /usr/bin /usr/local/sbin /usr/lib/jvm/default/bin /usr/bin/site_perl /usr/bin/vendor_perl /usr/bin/core_perl 
 
 
@@ -160,3 +155,11 @@ set -x PATH  ~/.cargo/bin/ ~/.opam/default/bin ~/.nix-profile/bin /nix/var/nix/p
 if test -d ~/.pyenv
     pyenv init - | source
 end
+
+# opam configuration
+if test -d ~/.opam
+    eval (opam env)
+    source /home/fxdx/.opam/opam-init/init.fish >/dev/null 2>/dev/null; or true
+end
+
+

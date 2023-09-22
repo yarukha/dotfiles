@@ -72,6 +72,7 @@ local plugins = {
         "python",
         "c",
         "latex",
+        "elm"
         -- "typst",
       },
     },
