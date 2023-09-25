@@ -131,7 +131,12 @@ local plugins = {
     "kaarmu/typst.vim",
     ft = "typst",
   },
+  {
+    "dstein64/vim-startuptime"
+  },
+
   games,
 }
 
 return plugins
+

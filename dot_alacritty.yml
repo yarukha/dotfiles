@@ -14,8 +14,6 @@ window:
      columns: 150
      lines: 50
 
-opacity:
-  _0.5_
 
 env: 
   WINIT_X11_SCALE_FACTOR: "1"

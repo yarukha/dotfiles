@@ -96,3 +96,4 @@ myStartupHook = do
             -- \--SetPartialStrut true --expand true --width 10 \
             -- \--transparent true --tint 0x5f5f5f --height 18"
   spawnOnce "feh --bg-fill --no-fehbg --randomize ~/Pictures/Wallpapers/*"
+  -- spawnOnce "picom -f"

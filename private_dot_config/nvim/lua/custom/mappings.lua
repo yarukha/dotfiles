@@ -10,13 +10,13 @@ M.general = {
     ["<C-k>"] = { "<cmd> TmuxNavigateUp<CR>" },
     ["<C-l>"] = { "<cmd> TmuxNavigateRight<CR>" },
     ["<leader>e"] = { "<cmd> setlocal spell!<CR>" },
-    ["]D"] = {
+    ["gn"] = {
       function()
         vim.diagnostic.goto_next { float = { border = "rounded" }, severity = vim.diagnostic.severity.ERROR }
       end,
       "Goto next",
     },
-    ["[D"] = {
+    ["gN"] = {
       function()
         vim.diagnostic.goto_prev { float = { border = "rounded" }, severity = vim.diagnostic.severity.ERROR }
       end,

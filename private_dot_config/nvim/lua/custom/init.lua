@@ -10,7 +10,6 @@
 vim.opt.scrolloff = 8
 vim.opt.spelllang = "fr"
 vim.opt.textwidth = 100
-vim.opt.colorcolumn = "100"
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 
