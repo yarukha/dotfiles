@@ -118,15 +118,15 @@ local plugins = {
     lazy = false,
   },
 
-  {
-    "f3fora/nvim-texlabconfig",
-    config = function()
-      require("texlabconfig").setup {}
-    end,
-    ft = { "tex", "bib" }, -- Lazy-load on filetype
-    build = "go build -o ~/.local/bin/",
-    -- build = 'go build -o ~/.bin/' if e.g. ~/.bin/ is in $PATH
-  },
+  -- {
+  --   "f3fora/nvim-texlabconfig",
+  --   config = function()
+  --     require("texlabconfig").setup {}
+  --   end,
+  --   ft = { "tex", "bib" }, -- Lazy-load on filetype
+  --   build = "go build -o ~/.local/bin/",
+  --   -- build = 'go build -o ~/.bin/' if e.g. ~/.bin/ is in $PATH
+  -- },
   {
     "kaarmu/typst.vim",
     ft = "typst",

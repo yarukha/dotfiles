@@ -138,7 +138,7 @@ abbr -a -- cm chezmoi
 abbr -a -- relof source ~/.config/fish/config.fish
 alias upd="yes | yay -Syu"
 alias upd-ocaml="opam update && opam upgrade -y"
-alias upd-rust="cargo install-update a"
+alias upd-rust="cargo install-update -a"
 # alias upd-haskell="cabal update"
 alias upd-nix="nix-channel --update; nix-env --install --attr nixpkgs.nix nixpkgs.cacert"
 abbr -a --position anywhere upd-all "upd && upd-ocaml && upd-rust && upd-nix"

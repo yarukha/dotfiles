@@ -21,13 +21,15 @@ local sources = {
 
   -- webdev stuff
   -- b.formatting.deno_fmt, -- choosed deno for ts/js files cuz its very fast!
-  b.formatting.prettier.with { filetypes = { "toml", "markdown","yaml","json","typescript","html" }}, -- so prettier works only on these filetypes
+  b.formatting.prettier.with { filetypes = { "toml", "markdown", "yaml", "json", "typescript", "html" } }, -- so prettier works only on these filetypes
 
   -- Lua
   b.formatting.stylua,
 
   -- cpp
-  b.formatting.clang_format,
+  b.formatting.clang_format.with {
+    command = "/usr/bin/clang-format",
+  },
   b.formatting.ocamlformat,
   b.formatting.latexindent.with { args = { "-m", "-" } },
 
@@ -36,7 +38,7 @@ local sources = {
   b.formatting.purs_tidy,
   -- b.formatting.fourmolu,
   -- b.formatting.elm_format,
-  typstfmt
+  typstfmt,
 }
 
 null_ls.setup {
