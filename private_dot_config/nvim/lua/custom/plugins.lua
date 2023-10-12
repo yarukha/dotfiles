@@ -4,6 +4,7 @@ local games = require "custom.games"
 ---@type NvPluginSpec[]
 local plugins = {
 
+
   {
     "nvim-tree/nvim-web-devicons",
     opts = {
@@ -72,7 +73,7 @@ local plugins = {
         "python",
         "c",
         "latex",
-        "elm"
+        "elm",
         -- "typst",
       },
     },
@@ -117,26 +118,15 @@ local plugins = {
     end,
     lazy = false,
   },
-
-  -- {
-  --   "f3fora/nvim-texlabconfig",
-  --   config = function()
-  --     require("texlabconfig").setup {}
-  --   end,
-  --   ft = { "tex", "bib" }, -- Lazy-load on filetype
-  --   build = "go build -o ~/.local/bin/",
-  --   -- build = 'go build -o ~/.bin/' if e.g. ~/.bin/ is in $PATH
-  -- },
   {
     "kaarmu/typst.vim",
     ft = "typst",
   },
   {
-    "dstein64/vim-startuptime"
+    "dstein64/vim-startuptime",
   },
 
   games,
 }
 
 return plugins
-
