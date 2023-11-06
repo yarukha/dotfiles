@@ -72,8 +72,8 @@ local plugins = {
         "ocaml",
         "python",
         "c",
-        "latex",
-        "elm",
+        -- "latex",
+        -- "elm",
         -- "typst",
       },
     },
@@ -93,23 +93,23 @@ local plugins = {
     end,
   },
   { "christoomey/vim-tmux-navigator", lazy = false },
-  {
-    "VidocqH/lsp-lens.nvim",
-    config = function()
-      require("lsp-lens").setup {
-        enable = true,
-        include_declaration = false, -- Reference include declaration
-        sections = { -- Enable / Disable specific request
-          definition = true,
-          references = false,
-          implements = true,
-        },
-        ignore_filetype = {
-          "prisma",
-        },
-      }
-    end,
-  },
+  -- {
+  --   "VidocqH/lsp-lens.nvim",
+  --   config = function()
+  --     require("lsp-lens").setup {
+  --       enable = true,
+  --       include_declaration = false, -- Reference include declaration
+  --       sections = { -- Enable / Disable specific request
+  --         definition = true,
+  --         references = false,
+  --         implements = true,
+  --       },
+  --       ignore_filetype = {
+  --         "prisma",
+  --       },
+  --     }
+  --   end,
+  -- },
 
   {
     "numToStr/Comment.nvim",
@@ -126,7 +126,7 @@ local plugins = {
     "dstein64/vim-startuptime",
   },
 
-  games,
+  -- games,
 }
 
 return plugins
