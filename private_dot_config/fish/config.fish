@@ -146,7 +146,8 @@ abbr -a --position anywhere upd-all "upd && upd-ocaml && upd-rust && upd-nix"
 #
 set -x PATH ~/.cargo/bin/ ~/.opam/default/bin ~/.nix-profile/bin /nix/var/nix/profiles/default/bin ~/.nim /usr/lib/jvm/java-17-graalvm/bin ~/.cabal/bin ~/.ghcup/bin /opt/ibm/ILOG/CPLEX_Studio201/cplex/bin/x86-64_linux/ ~/.pyenv/bin ~/.opam/default/bin ~/.local/bin /usr/local/bin /usr/bin /usr/local/sbin /usr/lib/jvm/default/bin /usr/bin/site_perl /usr/bin/vendor_perl /usr/bin/core_perl
 
-
+set -x DOTNET_ROOT $HOME/.dotnet
+set -x PATH $PATH:$HOME/.dotnet:$HOME/.dotnet/tools
 #
 #
 # if test -f ~/.local/share/chezmoi

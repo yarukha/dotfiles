@@ -1,10 +1,26 @@
 local overrides = require "custom.configs.overrides"
-local games = require "custom.games"
-
+local leet_arg = "leetcode.nvim"
 ---@type NvPluginSpec[]
 local plugins = {
 
+  {
+    "kawre/leetcode.nvim",
+    build = ":TSUpdate html",
+    dependencies = {
+      "nvim-telescope/telescope.nvim",
+      "nvim-lua/plenary.nvim", -- required by telescope
+      "MunifTanjim/nui.nvim",
 
+      -- optional
+      "nvim-treesitter/nvim-treesitter",
+      "rcarriga/nvim-notify",
+      "nvim-tree/nvim-web-devicons",
+    },    lazy = leet_arg ~= vim.fn.argv()[1],
+    opts = {
+        arg = leet_arg,
+    }
+  },
+  -- Override plugin definition options
   {
     "nvim-tree/nvim-web-devicons",
     opts = {
@@ -21,10 +37,6 @@ local plugins = {
         },
       },
     },
-  },
-  {
-    "NvChad/nvterm",
-    enabled = false,
   },
   {
     "neovim/nvim-lspconfig",
@@ -46,37 +58,12 @@ local plugins = {
   -- override plugin configs
   {
     "williamboman/mason.nvim",
-    opts = { ensure_installed = { "lua-language-server", "marksman", "yaml-language-server", "bash-language-server" } },
+    opts = overrides.mason,
   },
 
   {
     "nvim-treesitter/nvim-treesitter",
-    -- config = function()
-    --   local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
-    --   parser_config.typst = {
-    --     install_info = {
-    --       url = "https://github.com/SeniorMars/tree-sitter-typst", -- local path or git repo
-    --       files = { "src/parser.c", "src/scanner.c" }, -- note that some parsers also require src/scanner.c or src/scanner.cc
-    --       -- optional entries:
-    --       branch = "main", -- default branch in case of git repo if different from master
-    --       generate_requires_npm = false, -- if stand-alone parser without npm dependencies
-    --       requires_generate_from_grammar = false, -- if folder contains pre-generated src/parser.c
-    --     },
-    --     filetype = "typst", -- if filetype does not match the parser name
-    --   }
-    -- end,
-    opts = {
-      ensure_installed = {
-        "vim",
-        "lua",
-        "ocaml",
-        "python",
-        "c",
-        -- "latex",
-        -- "elm",
-        -- "typst",
-      },
-    },
+    opts = overrides.treesitter,
   },
 
   {
@@ -92,41 +79,20 @@ local plugins = {
       require("better_escape").setup()
     end,
   },
-  { "christoomey/vim-tmux-navigator", lazy = false },
+
+  -- To make a plugin not be loaded
   -- {
-  --   "VidocqH/lsp-lens.nvim",
-  --   config = function()
-  --     require("lsp-lens").setup {
-  --       enable = true,
-  --       include_declaration = false, -- Reference include declaration
-  --       sections = { -- Enable / Disable specific request
-  --         definition = true,
-  --         references = false,
-  --         implements = true,
-  --       },
-  --       ignore_filetype = {
-  --         "prisma",
-  --       },
-  --     }
-  --   end,
+  --   "NvChad/nvim-colorizer.lua",
+  --   enabled = false
   -- },
 
-  {
-    "numToStr/Comment.nvim",
-    config = function()
-      require("Comment").setup {}
-    end,
-    lazy = false,
-  },
-  {
-    "kaarmu/typst.vim",
-    ft = "typst",
-  },
-  {
-    "dstein64/vim-startuptime",
-  },
-
-  -- games,
+  -- All NvChad plugins are lazy-loaded by default
+  -- For a plugin to be loaded, you will need to set either `ft`, `cmd`, `keys`, `event`, or set `lazy = false`
+  -- If you want a plugin to load on startup, add `lazy = false` to a plugin spec, for example
+  -- {
+  --   "mg979/vim-visual-multi",
+  --   lazy = false,
+  -- }
 }
 
 return plugins
