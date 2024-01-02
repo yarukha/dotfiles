@@ -1,13 +1,25 @@
-## Set values
-# Hide welcome message
-set fish_greeting
 set VIRTUAL_ENV_DISABLE_PROMPT 1
+
+fish_add_path /usr/bin/
+fish_add_path /bin/
+fish_add_path /usr/local/bin/
+fish_add_path /opt/homebrew/bin/
+fish_add_path ~/.pyenv/bin/
+fish_add_path /usr/local/bin/
+fish_add_path ~/.cargo/bin/
+fish_add_path ~/.ghcup/bin/
+fish_add_path ~/.cabal/bin
+fish_add_path /Users/fxdx/Library/Application
+fish_add_path Support/Coursier/bin
+fish_add_path ~/bin/
+
+# Hide welcome message
 
 set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 ## Export variable need for qt-theme
-if type qtile >>/dev/null 2>&1
-    set -x QT_QPA_PLATFORMTHEME qt5ct
-end
+# if type qtile >>/dev/null 2>&1
+    # set -x QT_QPA_PLATFORMTHEME qt5ct
+# end
 
 # Set settings for https://github.com/franciscolourenco/done
 set -U __done_min_cmd_duration 10000
@@ -136,18 +148,20 @@ abbr -a -- gits git status
 abbr -a -- alac vim ~/.alacritty.yml
 abbr -a -- cm chezmoi
 abbr -a -- relof source ~/.config/fish/config.fish
-alias upd="yes | yay -Syu"
+# alias upd="yes | yay -Syu"
 alias upd-ocaml="opam update && opam upgrade -y"
 alias upd-rust="cargo install-update -a"
 # alias upd-haskell="cabal update"
 alias upd-nix="nix-env --install --attr nixpkgs.nix nixpkgs.cacert"
-abbr -a --position anywhere upd-all "upd && upd-ocaml && upd-rust && upd-nix"
-#
-#
-set -x PATH ~/.cargo/bin/ ~/.opam/default/bin ~/.nix-profile/bin /nix/var/nix/profiles/default/bin ~/.nim /usr/lib/jvm/java-17-graalvm/bin ~/.cabal/bin ~/.ghcup/bin /opt/ibm/ILOG/CPLEX_Studio201/cplex/bin/x86-64_linux/ ~/.pyenv/bin ~/.opam/default/bin ~/.local/bin /usr/local/bin /usr/bin /usr/local/sbin /usr/lib/jvm/default/bin /usr/bin/site_perl /usr/bin/vendor_perl /usr/bin/core_perl
+# abbr -a --position anywhere upd-all "upd && upd-ocaml && upd-rust && upd-nix"
 
-set -x DOTNET_ROOT $HOME/.dotnet
-set -x PATH $PATH:$HOME/.dotnet:$HOME/.dotnet/tools
+abbr -a vi nvim 
+abbr -a vim nvim
+
+
+
+#
+#
 #
 #
 # if test -f ~/.local/share/chezmoi
@@ -162,7 +176,18 @@ if test -d ~/.opam
     eval (opam env)
     source /home/fxdx/.opam/opam-init/init.fish >/dev/null 2>/dev/null; or true
 end
+
 #
 # if command -q nix-your-shell
 #   nix-your-shell fish | source
 # end
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME 
+
+# >>> JVM installed by coursier >>>
+set -gx JAVA_HOME "/Users/fxdx/Library/Caches/Coursier/arc/https/github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.21%252B9/OpenJDK11U-jdk_aarch64_mac_hotspot_11.0.21_9.tar.gz/jdk-11.0.21+9/Contents/Home"
+# <<< JVM installed by coursier <<<
+
+# >>> coursier install directory >>>
+# <<< coursier install directory <<<

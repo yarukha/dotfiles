@@ -2,23 +2,32 @@ local overrides = require "custom.configs.overrides"
 local leet_arg = "leetcode.nvim"
 ---@type NvPluginSpec[]
 local plugins = {
-
-  {
-    "kawre/leetcode.nvim",
-    build = ":TSUpdate html",
-    dependencies = {
-      "nvim-telescope/telescope.nvim",
-      "nvim-lua/plenary.nvim", -- required by telescope
-      "MunifTanjim/nui.nvim",
-
-      -- optional
-      "nvim-treesitter/nvim-treesitter",
-      "rcarriga/nvim-notify",
-      "nvim-tree/nvim-web-devicons",
-    },    lazy = leet_arg ~= vim.fn.argv()[1],
-    opts = {
-        arg = leet_arg,
-    }
+  require("lazy").setup {
+    {
+      "nvim-neorg/neorg",
+      build = ":Neorg sync-parsers",
+      -- tag = "*",
+      dependencies = { "nvim-lua/plenary.nvim" },
+      config = function()
+        require("neorg").setup {
+          load = {
+            ["core.defaults"] = {}, -- Loads default behaviour
+            ["core.concealer"] = {}, -- Adds pretty icons to your documents
+            ["core.dirman"] = { -- Manages Neorg workspaces
+              config = {
+                workspaces = {
+                  notes = "~/notes",
+                },
+              },
+            },
+          },
+        }
+      end,
+    },
+  } {
+    "kaarmu/typst.vim",
+    ft = "typst",
+    lazy = false,
   },
   -- Override plugin definition options
   {
