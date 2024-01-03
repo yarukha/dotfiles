@@ -1,17 +1,24 @@
+set -g fish_greeting
 set VIRTUAL_ENV_DISABLE_PROMPT 1
-
-fish_add_path /usr/bin/
-fish_add_path /bin/
-fish_add_path /usr/local/bin/
-fish_add_path /opt/homebrew/bin/
-fish_add_path ~/.pyenv/bin/
-fish_add_path /usr/local/bin/
-fish_add_path ~/.cargo/bin/
-fish_add_path ~/.ghcup/bin/
-fish_add_path ~/.cabal/bin
-fish_add_path /Users/fxdx/Library/Application
-fish_add_path Support/Coursier/bin
-fish_add_path ~/bin/
+switch (uname)
+    case Darwin
+      fish_add_path /usr/bin/
+      fish_add_path /bin/
+      fish_add_path /usr/local/bin/
+      fish_add_path /opt/homebrew/bin/
+      fish_add_path ~/.pyenv/bin/
+      fish_add_path /usr/local/bin/
+      fish_add_path ~/.cargo/bin/
+      fish_add_path ~/.ghcup/bin/
+      fish_add_path ~/.cabal/bin
+      fish_add_path /Users/fxdx/Library/Application
+      fish_add_path Support/Coursier/bin
+       # do things for macOS
+    case Linux
+        # do things for Linux
+    case '*'
+        # do things for other OSs
+end
 
 # Hide welcome message
 
