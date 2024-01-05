@@ -2,6 +2,7 @@ set -g fish_greeting
 set VIRTUAL_ENV_DISABLE_PROMPT 1
 switch (uname)
     case Darwin
+       # do things for macOS
       fish_add_path /usr/bin/
       fish_add_path /bin/
       fish_add_path /usr/local/bin/
@@ -13,9 +14,11 @@ switch (uname)
       fish_add_path ~/.cabal/bin
       fish_add_path /Users/fxdx/Library/Application
       fish_add_path Support/Coursier/bin
-       # do things for macOS
     case Linux
         # do things for Linux
+      fish_add_path /usr/bin 
+      fish_add_path /usr/local/bin 
+
     case '*'
         # do things for other OSs
 end
@@ -176,14 +179,10 @@ alias upd-nix="nix-env --install --attr nixpkgs.nix nixpkgs.cacert"
 abbr -a vi nvim 
 abbr -a vim nvim
 
+if test -f ~/.local/share/chezmoi
+    chezmoi re-add
+end
 
-
-#
-#
-#
-#
-# if test -f ~/.local/share/chezmoi
-#     chezmoi re-add
 # pyenv configuration
 if test -d ~/.pyenv
     pyenv init - | source
