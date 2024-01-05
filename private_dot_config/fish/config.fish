@@ -1,26 +1,18 @@
 set -g fish_greeting
 set VIRTUAL_ENV_DISABLE_PROMPT 1
+fish_add_path /usr/bin/
+fish_add_path /bin/
+fish_add_path /usr/local/bin/
+
 switch (uname)
     case Darwin
        # do things for macOS
-      fish_add_path /usr/bin/
-      fish_add_path /bin/
-      fish_add_path /usr/local/bin/
       fish_add_path /opt/homebrew/bin/
-      fish_add_path ~/.pyenv/bin/
-      fish_add_path /usr/local/bin/
-      fish_add_path ~/.cargo/bin/
-      fish_add_path ~/.ghcup/bin/
-      fish_add_path ~/.cabal/bin
       fish_add_path /Users/fxdx/Library/Application
-      fish_add_path Support/Coursier/bin
     case Linux
-        # do things for Linux
-      fish_add_path /usr/bin 
-      fish_add_path /usr/local/bin 
-
+      # do things for Linux
+      fish_add_path ~/.local/bin
     case '*'
-        # do things for other OSs
 end
 
 # Hide welcome message
@@ -185,30 +177,47 @@ end
 
 # pyenv configuration
 if test -d ~/.pyenv
+    fish_add_path ~/.pyenv/bin/
     pyenv init - | source
 end
 
-# opam configuration
+#haskell config
+if test -d ~/.ghcup
+  fish_add_path ~/.ghcup/bin/
+  fish_add_path ~/.cabal/bin/
+  set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME 
+end
+
+#rust config
+if test -d ~/.cargo 
+  fish_add_path ~/.cargo/bin/
+end
+
+# ocaml config
 if test -d ~/.opam
     eval (opam env)
     source /home/fxdx/.opam/opam-init/init.fish >/dev/null 2>/dev/null; or true
 end
 
-#
-# if command -q nix-your-shell
-#   nix-your-shell fish | source
-# end
+#scala config 
+switch (uname)
+  case Darwin
+    if test -d ~/Library/Application Support/Coursier
+      fish_add_path /Users/fxdx/Library/Application Support/Coursier/bin
+    end 
+  case Linux 
+    if test -d ~/.local/share/coursier
+      fish_add_path ~/.local/share/coursier/bin
+    end 
+end 
+
+
+
+
 switch (uname)
   case Darwin
     eval "$(/opt/homebrew/bin/brew shellenv)"
   case "*"
 end
 
-set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME 
 
-# >>> JVM installed by coursier >>>
-set -gx JAVA_HOME "/Users/fxdx/Library/Caches/Coursier/arc/https/github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.21%252B9/OpenJDK11U-jdk_aarch64_mac_hotspot_11.0.21_9.tar.gz/jdk-11.0.21+9/Contents/Home"
-# <<< JVM installed by coursier <<<
-
-# >>> coursier install directory >>>
-# <<< coursier install directory <<<
