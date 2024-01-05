@@ -149,12 +149,23 @@ alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
 
 set -gx EDITOR nvim
 set -gx VISUAL nvim
-set -gx TERMINAL alacritty
+switch (uname)
+  case Darwin 
+    set -gx TERMINAL iterm2
+  case "*"
+    set -gx TERMINAL alacritty
+end
+
 abbr -a -- rr ranger
 abbr -a -- gits git status
-abbr -a -- alac vim ~/.alacritty.yml
+abbr -a -- alac $EDITOR ~/.alacritty.yml
 abbr -a -- cm chezmoi
+abbr -a -- fishc $EDITOR ~/.config/fish/config.fish
 abbr -a -- relof source ~/.config/fish/config.fish
+abbr -a -- lspc $EDITOR ~/.config/nvim/lua/custom/configs/lspconfig.lua
+abbr -a -- fmtc $EDITOR ~/.config/nvim/lua/custom/configs/null-ls.lua
+abbr -a -- plugc $EDITOR ~/.config/nvim/lua/custom/plugins.lua
+
 # alias upd="yes | yay -Syu"
 alias upd-ocaml="opam update && opam upgrade -y"
 alias upd-rust="cargo install-update -a"
@@ -188,7 +199,11 @@ end
 # if command -q nix-your-shell
 #   nix-your-shell fish | source
 # end
-eval "$(/opt/homebrew/bin/brew shellenv)"
+switch (uname)
+  case Darwin
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+  case "*"
+end
 
 set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME 
 

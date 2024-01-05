@@ -25,14 +25,16 @@ local sources = {
 
   -- Lua
   b.formatting.stylua,
-
   -- cpp
   b.formatting.clang_format,
-
+  -- ocaml
   b.formatting.ocamlformat,
+  -- haskell
   b.formatting.fourmolu,
+  --bash
+  b.formatting.beautysh,
 
-  typstfmt
+  typstfmt,
 }
 
 null_ls.setup {

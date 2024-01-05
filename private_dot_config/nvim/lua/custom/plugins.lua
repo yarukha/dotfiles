@@ -2,33 +2,30 @@ local overrides = require "custom.configs.overrides"
 local leet_arg = "leetcode.nvim"
 ---@type NvPluginSpec[]
 local plugins = {
-  -- {
-  --   "nvim-neorg/neorg",
-  --   build = ":Neorg sync-parsers",
-  --   -- tag = "*",
-  --   dependencies = { "nvim-lua/plenary.nvim" },
-  --   config = function()
-  --     require("neorg").setup {
-  --       load = {
-  --         ["core.defaults"] = {}, -- Loads default behaviour
-  --         ["core.journal"] = {
-  --           config = {
-  --             strategy = "nested",
-  --           },
-  --         },
-  --         ["core.concealer"] = {}, -- Adds pretty icons to your documents
-  --         ["core.dirman"] = { -- Manages Neorg workspaces
-  --           config = {
-  --             workspaces = {
-  --               notes = "~Desktop/notes",
-  --               work = "~Desktop/work-notes",
-  --             },
-  --           },
-  --         },
-  --       },
-  --     }
-  --   end,
-  -- },
+
+  -- plugins/telescope.lua:
+  {
+    "nosduco/remote-sshfs.nvim",
+    dependencies = { "nvim-telescope/telescope.nvim" },
+    config = function()
+      require("remote-sshfs").setup {}
+      require("telescope").load_extension "remote-sshfs"
+    end,
+  },
+  {
+    "jay-babu/mason-null-ls.nvim",
+    event = { "BufReadPre", "BufNewFile" },
+    dependencies = {
+      "williamboman/mason.nvim",
+      "jose-elias-alvarez/null-ls.nvim",
+    },
+    config = function()
+      require("mason").setup()
+      require("mason-null-ls").setup {
+        handlers = {},
+      }
+    end,
+  },
   {
     "kaarmu/typst.vim",
     ft = "typst",
