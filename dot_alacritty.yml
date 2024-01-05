@@ -1,4 +1,4 @@
-  import:
+import:
   - ~/.config/alacritty/themes/themes/everforest_dark.yaml
 
 window:
@@ -11,6 +11,6 @@ env:
   WINIT_X11_SCALE_FACTOR: "1"
 
 font:
-  size: 14
+  size: 12
 
 
