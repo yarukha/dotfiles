@@ -202,7 +202,7 @@ end
 #scala config 
 switch (uname)
   case Darwin
-    if test -d ~/Library/Application Support/Coursier
+    if test -d "~/Library/Application Support/Coursier"
       fish_add_path /Users/fxdx/Library/Application Support/Coursier/bin
     end 
   case Linux 
