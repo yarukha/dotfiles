@@ -3,7 +3,6 @@ local M = {}
 
 M.general = {
   n = {
-    [";"] = { "." },
     ["<C-b>"] = { "<cmd> NvimTreeToggle<CR>", "Toggle nvimtree" },
     ["<C-p>"] = { "<cmd> Telescope find_files <CR>" },
     ["<leader>e"] = { "<cmd> setlocal spell!<CR>" },
