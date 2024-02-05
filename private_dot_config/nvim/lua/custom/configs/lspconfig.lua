@@ -14,6 +14,10 @@ for _, lsp in ipairs(servers) do
   }
 end
 
+lspconfig.typst_lsp.setup{
+  on_attach = on_attach,
+}
+
 lspconfig.clangd.setup {
   on_attach = on_attach,
   capabilities = capabilities,

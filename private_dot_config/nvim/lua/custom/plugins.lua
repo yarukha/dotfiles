@@ -2,16 +2,7 @@ local overrides = require "custom.configs.overrides"
 local leet_arg = "leetcode.nvim"
 ---@type NvPluginSpec[]
 local plugins = {
-
-  -- plugins/telescope.lua:
-  {
-    "nosduco/remote-sshfs.nvim",
-    dependencies = { "nvim-telescope/telescope.nvim" },
-    config = function()
-      require("remote-sshfs").setup {}
-      require("telescope").load_extension "remote-sshfs"
-    end,
-  },
+  { "sindrets/diffview.nvim" },
   {
     "jay-babu/mason-null-ls.nvim",
     event = { "BufReadPre", "BufNewFile" },
@@ -75,6 +66,23 @@ local plugins = {
   {
     "nvim-treesitter/nvim-treesitter",
     opts = overrides.treesitter,
+    config = function()
+      require("nvim-treesitter.configs").setup {
+        auto_install = true,
+        ensure_installed = {
+          "c",
+          "lua",
+          "python",
+          "vim",
+          "ocaml",
+          "ocaml_interface",
+          "ocamllex",
+          "menhir",
+          "haskell",
+          "git_config",
+        },
+      }
+    end,
   },
 
   {
