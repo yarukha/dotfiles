@@ -65,24 +65,22 @@ local plugins = {
 
   {
     "nvim-treesitter/nvim-treesitter",
-    opts = overrides.treesitter,
-    config = function()
-      require("nvim-treesitter.configs").setup {
-        auto_install = true,
-        ensure_installed = {
-          "c",
-          "lua",
-          "python",
-          "vim",
-          "ocaml",
-          "ocaml_interface",
-          "ocamllex",
-          "menhir",
-          "haskell",
-          "git_config",
-        },
-      }
-    end,
+    opts = {
+      auto_install = true,
+      ensure_installed = {
+        "c",
+        "lua",
+        "python",
+        "vim",
+        "ocaml",
+        "ocaml_interface",
+        "ocamllex",
+        "menhir",
+        "haskell",
+        "git_config",
+      },
+      highlight = { enable = true },
+    },
   },
 
   {
