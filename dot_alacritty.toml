@@ -1,0 +1,15 @@
+import = ["/Users/fxdx/.config/alacritty/themes/themes/everforest_dark.yaml"]
+
+[env]
+WINIT_X11_SCALE_FACTOR = "1"
+
+[font]
+size = 12
+
+[shell]
+args = ["--login", "-c", "tmux"]
+program = "fish"
+
+[window.dimensions]
+columns = 150
+lines = 50
