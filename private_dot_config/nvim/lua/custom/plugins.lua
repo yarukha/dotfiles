@@ -2,6 +2,8 @@ local overrides = require "custom.configs.overrides"
 local leet_arg = "leetcode.nvim"
 ---@type NvPluginSpec[]
 local plugins = {
+
+  { "typicode/bg.nvim", lazy = false },
   { "sindrets/diffview.nvim" },
   {
     "jay-babu/mason-null-ls.nvim",

@@ -4,6 +4,8 @@ vim.opt.spelllang = "fr"
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 
+
+
 -- vim.cmd [[command W :execute ':silent w !sudo tee % > /dev/null' | :edit!]]
 
 -- vim.filetype.add { extension = { typ = "typst" } }
