@@ -3,6 +3,7 @@ set VIRTUAL_ENV_DISABLE_PROMPT 1
 fish_add_path /usr/bin/
 fish_add_path /bin/
 fish_add_path /usr/local/bin/
+fish_add_path ~/.custom_bin/
 
 switch (uname)
     case Darwin
