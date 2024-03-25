@@ -14,7 +14,7 @@ for _, lsp in ipairs(servers) do
   }
 end
 
-lspconfig.typst_lsp.setup{
+lspconfig.typst_lsp.setup {
   on_attach = on_attach,
 }
 
@@ -26,5 +26,34 @@ lspconfig.clangd.setup {
     "--offset-encoding=utf-16",
   },
 }
+
+lspconfig.texlab.setup {
+  settings = {
+    texlab = {
+      auxDirectory = ".",
+      bibtexFormatter = "texlab",
+      build = {
+        args = { "-X", "compile", "%f", "--synctex", "--keep-logs", "--keep-intermediates" },
+        executable = "tectonic",
+        -- forwardSearchAfter = false,
+        onSave = true,
+      },
+      chktex = {
+        onEdit = false,
+        onOpenAndSave = false,
+      },
+      diagnosticsDelay = 300,
+      formatterLineLength = 80,
+      forwardSearch = {
+        args = {},
+      },
+      latexFormatter = "latexindent",
+      latexindent = {
+        modifyLineBreaks = false,
+      },
+    },
+  },
+}
+
 --
 -- lspconfig.pyright.setup { blabla}

@@ -3,6 +3,12 @@ local leet_arg = "leetcode.nvim"
 ---@type NvPluginSpec[]
 local plugins = {
 
+  {
+    "lervag/vimtex",
+    init = function()
+      -- Use init for configuration, don't use the more common "config".
+    end,
+  },
   { "typicode/bg.nvim", lazy = false },
   { "sindrets/diffview.nvim" },
   {
