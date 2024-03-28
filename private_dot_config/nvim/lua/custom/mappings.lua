@@ -6,6 +6,7 @@ M.general = {
     ["<C-b>"] = { "<cmd> NvimTreeToggle<CR>", "Toggle nvimtree" },
     ["<C-p>"] = { "<cmd> Telescope find_files <CR>" },
     ["<leader>e"] = { "<cmd> setlocal spell!<CR>" },
+    ["<leader>g"] = { "<cmd> Telescope live_grep <CR>" },
     ["gn"] = {
       function()
         vim.diagnostic.goto_next { float = { border = "rounded" }, severity = vim.diagnostic.severity.ERROR }

@@ -1,7 +1,32 @@
 local overrides = require "custom.configs.overrides"
 local leet_arg = "leetcode.nvim"
+local telescope = require "telescope"
+
 ---@type NvPluginSpec[]
 local plugins = {
+
+  { "nvim-lua/popup.nvim" },
+  { "nvim-lua/plenary.nvim" },
+  { "nvim-telescope/telescope.nvim" },
+  {
+    "nvim-telescope/telescope-media-files.nvim",
+    config = function()
+      telescope.load_extension "media_files"
+    end,
+  },
+
+  {
+    "davvid/telescope-git-grep.nvim",
+    config = function()
+      telescope.load_extension "frecency"
+    end,
+  },
+  {
+    "nvim-telescope/telescope-frecency.nvim",
+    config = function()
+      telescope.load_extension "frecency"
+    end,
+  },
 
   {
     "lervag/vimtex",
@@ -104,20 +129,6 @@ local plugins = {
       require("better_escape").setup()
     end,
   },
-
-  -- To make a plugin not be loaded
-  -- {
-  --   "NvChad/nvim-colorizer.lua",
-  --   enabled = false
-  -- },
-
-  -- All NvChad plugins are lazy-loaded by default
-  -- For a plugin to be loaded, you will need to set either `ft`, `cmd`, `keys`, `event`, or set `lazy = false`
-  -- If you want a plugin to load on startup, add `lazy = false` to a plugin spec, for example
-  -- {
-  --   "mg979/vim-visual-multi",
-  --   lazy = false,
-  -- }
 }
 
 return plugins
