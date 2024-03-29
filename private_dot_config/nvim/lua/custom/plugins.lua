@@ -1,10 +1,8 @@
 local overrides = require "custom.configs.overrides"
-local leet_arg = "leetcode.nvim"
 local telescope = require "telescope"
 
 ---@type NvPluginSpec[]
 local plugins = {
-
   { "nvim-lua/popup.nvim" },
   { "nvim-lua/plenary.nvim" },
   { "nvim-telescope/telescope.nvim" },
