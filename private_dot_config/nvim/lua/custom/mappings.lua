@@ -4,9 +4,9 @@ local M = {}
 M.general = {
   n = {
     ["<C-b>"] = { "<cmd> NvimTreeToggle<CR>", "Toggle nvimtree" },
-    ["<C-p>"] = { "<cmd> Telescope find_files <CR>" },
+    -- ["<C-p>"] = { "<cmd> Telescope find_files <CR>" },
     ["<leader>e"] = { "<cmd> setlocal spell!<CR>" },
-    ["<leader>g"] = { "<cmd> Telescope live_grep <CR>" },
+    -- ["<leader>g"] = { "<cmd> Telescope live_grep <CR>" },
     ["<leader>i"] = {
       function()
         require("nvterm.terminal").toggle "float"
