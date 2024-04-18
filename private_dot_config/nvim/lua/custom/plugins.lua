@@ -3,6 +3,7 @@ local telescope = require "telescope"
 
 ---@type NvPluginSpec[]
 local plugins = {
+  {"nvim-treesitter/nvim-treesitter-context",lazy = false},
   { "nvim-lua/popup.nvim" },
   { "nvim-lua/plenary.nvim" },
   { "nvim-telescope/telescope.nvim" },
