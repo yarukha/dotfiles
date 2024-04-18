@@ -13,11 +13,12 @@ M.general = {
       end,
       "Toggle floating term",
     },
-    ["gc"] = {
+    ["gC"] = {
       function()
         require("treesitter-context").go_to_context(vim.v.count1)
       end,
       "Goto context",
+      {silent = true}
     },
     ["cc"] = {
       function()
