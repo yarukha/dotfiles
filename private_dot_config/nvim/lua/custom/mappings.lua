@@ -13,6 +13,18 @@ M.general = {
       end,
       "Toggle floating term",
     },
+    ["gc"] = {
+      function()
+        require("treesitter-context").go_to_context(vim.v.count1)
+      end,
+      "Goto context",
+    },
+    ["cc"] = {
+      function()
+        require("Comment.api").toggle.linewise.current()
+      end,
+      "Toggle comment",
+    },
 
     ["gn"] = {
       function()
