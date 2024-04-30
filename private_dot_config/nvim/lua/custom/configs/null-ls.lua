@@ -35,6 +35,8 @@ local sources = {
   b.formatting.beautysh,
   --latex
   b.formatting.latexindent,
+  --rust 
+  b.formatting.rustfmt,
 
   --typst
   typstfmt,
