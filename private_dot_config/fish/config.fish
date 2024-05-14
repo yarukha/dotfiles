@@ -226,7 +226,9 @@ end
 
 switch (uname)
   case Darwin
-    eval "$(/opt/homebrew/bin/brew shellenv)"
+    if test -d /opt/homebrew/bin/
+      eval $(/opt/homebrew/bin/brew shellenv)
+    end
   case "*"
 end
 
