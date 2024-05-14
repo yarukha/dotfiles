@@ -4,12 +4,13 @@ fish_add_path /usr/bin/
 fish_add_path /bin/
 fish_add_path /usr/local/bin/
 fish_add_path ~/.custom_bin/
+fish_add_path /opt/local/bin
 
 switch (uname)
     case Darwin
        # do things for macOS
       fish_add_path /opt/homebrew/bin/
-      fish_add_path /Users/fxdx/Library/Application
+      fish_add_path ~/Library/Application
     case Linux
       # do things for Linux
       fish_add_path ~/.local/bin
@@ -198,20 +199,29 @@ end
 # ocaml config
 if test -d ~/.opam
     eval (opam env)
-    source /home/fxdx/.opam/opam-init/init.fish >/dev/null 2>/dev/null; or true
+    source ~/.opam/opam-init/init.fish >/dev/null 2>/dev/null; or true
 end
 
 #scala config 
 switch (uname)
   case Darwin
     if test -d "~/Library/Application Support/Coursier"
-      fish_add_path /Users/fxdx/Library/Application Support/Coursier/bin
+      fish_add_path ~/Library/Application Support/Coursier/bin
     end 
   case Linux 
     if test -d ~/.local/share/coursier
       fish_add_path ~/.local/share/coursier/bin
     end 
 end 
+
+#dotnet config 
+switch (uname)
+  case Darwin 
+    if test -d ~/.dotnet/
+      fish_add_path ~/.dotnet/tools/
+    end 
+end
+
 
 
 switch (uname)
@@ -221,11 +231,10 @@ switch (uname)
 end
 
 
-
 # >>> JVM installed by coursier >>>
-set -gx JAVA_HOME "/Users/fxdx/Library/Caches/Coursier/arc/https/github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.22%252B7/OpenJDK11U-jdk_x64_mac_hotspot_11.0.22_7.tar.gz/jdk-11.0.22+7/Contents/Home"
+set -gx JAVA_HOME "~/Library/Caches/Coursier/arc/https/github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.22%252B7/OpenJDK11U-jdk_x64_mac_hotspot_11.0.22_7.tar.gz/jdk-11.0.22+7/Contents/Home"
 # <<< JVM installed by coursier <<<
 
 # >>> coursier install directory >>>
-set -gx PATH "$PATH:/Users/fxdx/Library/Application Support/Coursier/bin"
+set -gx PATH "$PATH:~/Library/Application Support/Coursier/bin"
 # <<< coursier install directory <<<

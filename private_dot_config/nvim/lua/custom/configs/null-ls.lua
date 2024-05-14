@@ -37,6 +37,8 @@ local sources = {
   b.formatting.latexindent,
   --rust 
   b.formatting.rustfmt,
+  --fsarhp
+  b.formatting.fantomas,
 
   --typst
   typstfmt,

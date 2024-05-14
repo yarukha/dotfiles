@@ -3,6 +3,7 @@ local telescope = require "telescope"
 
 ---@type NvPluginSpec[]
 local plugins = {
+  { "Ionide/Ionide-vim" },
   {
     "nvim-treesitter/nvim-treesitter-context",
     lazy = false,
