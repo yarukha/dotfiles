@@ -3,7 +3,15 @@ local telescope = require "telescope"
 
 ---@type NvPluginSpec[]
 local plugins = {
-  { "Ionide/Ionide-vim" },
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = function()
+      vim.fn["mkdp#util#install"]()
+    end,
+  },
+  -- { "Ionide/Ionide-vim" },
   {
     "nvim-treesitter/nvim-treesitter-context",
     lazy = false,
