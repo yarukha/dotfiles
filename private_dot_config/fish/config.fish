@@ -121,6 +121,7 @@ alias wget='wget -c '
 alias rmpkg="sudo pacman -Rdd"
 alias psmem='ps auxf | sort -nr -k 4'
 alias psmem10='ps auxf | sort -nr -k 4 | head -10'
+alias cd='z'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
@@ -240,3 +241,8 @@ set -gx JAVA_HOME "~/Library/Caches/Coursier/arc/https/github.com/adoptium/temur
 # >>> coursier install directory >>>
 set -gx PATH "$PATH:~/Library/Application Support/Coursier/bin"
 # <<< coursier install directory <<<
+#
+
+fzf --fish | source
+
+zoxide init fish | source
