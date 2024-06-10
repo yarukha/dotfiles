@@ -570,7 +570,7 @@ modifyLineBreaks:
             questionMark: 1                 # 0/1
             other: 0                        # regex
     textWrapOptions:
-        columns: 100
+        columns: 120
         multipleSpacesToSingle: 1              
         removeBlockLineBreaks: 1
         when: before                        # before/after

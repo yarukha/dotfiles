@@ -121,7 +121,6 @@ alias wget='wget -c '
 alias rmpkg="sudo pacman -Rdd"
 alias psmem='ps auxf | sort -nr -k 4'
 alias psmem10='ps auxf | sort -nr -k 4 | head -10'
-alias cd='z'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
@@ -244,5 +243,3 @@ set -gx PATH "$PATH:~/Library/Application Support/Coursier/bin"
 #
 
 fzf --fish | source
-
-zoxide init fish | source

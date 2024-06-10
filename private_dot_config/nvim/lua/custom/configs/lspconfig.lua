@@ -30,13 +30,13 @@ lspconfig.clangd.setup {
 lspconfig.texlab.setup {
   settings = {
     texlab = {
-      auxDirectory = ".",
+      auxDirectory = "../build",
       bibtexFormatter = "texlab",
       build = {
         args = { "-X", "compile", "%f", "--synctex", "--keep-logs", "--keep-intermediates" },
         executable = "tectonic",
         -- forwardSearchAfter = false,
-        onSave = true,
+        -- onSave = true,
       },
       chktex = {
         onEdit = false,
@@ -44,12 +44,13 @@ lspconfig.texlab.setup {
       },
       diagnosticsDelay = 300,
       formatterLineLength = 80,
-      forwardSearch = {
-        args = {},
-      },
+      -- forwardSearch = {
+      --   executable = "/Applications/Skim.app/Contents/SharedSupport/displayline",
+      --   args = {"%l","%p","%f"},
+      -- },
       latexFormatter = "latexindent",
       latexindent = {
-        modifyLineBreaks = false,
+        modifyLineBreaks = true,
       },
     },
   },
