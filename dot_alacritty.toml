@@ -4,7 +4,7 @@ import = ["/Users/fxdx/.config/alacritty/themes/themes/everforest_dark.toml"]
 WINIT_X11_SCALE_FACTOR = "1"
 
 [font]
-size = 13
+size = 12
 normal = {family = "Hack Nerd Font"}
 
 [shell]

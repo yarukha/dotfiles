@@ -39,6 +39,7 @@ end
 ## Starship prompt
 if status --is-interactive
     starship init fish | source
+    enable_transience
     atuin init fish | source
 end
 
