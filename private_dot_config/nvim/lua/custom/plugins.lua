@@ -4,6 +4,12 @@ local telescope = require "telescope"
 ---@type NvPluginSpec[]
 local plugins = {
   {
+    "3rd/image.nvim",
+    config = function()
+      -- ...
+    end,
+  },
+  {
     "iamcco/markdown-preview.nvim",
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
     ft = { "markdown" },
