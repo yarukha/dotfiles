@@ -3,6 +3,7 @@ local telescope = require "telescope"
 
 ---@type NvPluginSpec[]
 local plugins = {
+  "whonore/Coqtail",
   {
     "3rd/image.nvim",
     config = function()
@@ -52,22 +53,8 @@ local plugins = {
       -- Use init for configuration, don't use the more common "config".
     end,
   },
-  { "typicode/bg.nvim", lazy = false },
+  { "typicode/bg.nvim",      lazy = false },
   { "sindrets/diffview.nvim" },
-  {
-    "jay-babu/mason-null-ls.nvim",
-    event = { "BufReadPre", "BufNewFile" },
-    dependencies = {
-      "williamboman/mason.nvim",
-      "jose-elias-alvarez/null-ls.nvim",
-    },
-    config = function()
-      require("mason").setup()
-      require("mason-null-ls").setup {
-        handlers = {},
-      }
-    end,
-  },
   {
     "kaarmu/typst.vim",
     ft = "typst",
@@ -96,7 +83,7 @@ local plugins = {
     dependencies = {
       -- format & linting
       {
-        "jose-elias-alvarez/null-ls.nvim",
+        "nvimtools/none-ls.nvim",
         config = function()
           require "custom.configs.null-ls"
         end,

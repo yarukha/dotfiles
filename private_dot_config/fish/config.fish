@@ -161,6 +161,7 @@ end
 abbr -a -- rr ranger
 abbr -a -- gits git status
 abbr -a -- alac $EDITOR ~/.alacritty.toml
+abbr -a -- wezc $EDITOR ~/.config/wezterm/wezterm.lua
 abbr -a -- cm chezmoi
 abbr -a -- fishc $EDITOR ~/.config/fish/config.fish
 abbr -a -- relof source ~/.config/fish/config.fish
