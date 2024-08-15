@@ -19,8 +19,6 @@ local typstfmt = helpers.make_builtin {
 
 local sources = {
 
-  -- webdev stuff
-  b.formatting.deno_fmt, -- choosed deno for ts/js files cuz its very fast!
   b.formatting.prettier.with { filetypes = { "html", "markdown", "css", "toml" } }, -- so prettier works only on these filetypes
 
   -- Lua
@@ -29,16 +27,14 @@ local sources = {
   b.formatting.clang_format,
   -- ocaml
   b.formatting.ocamlformat,
-  -- haskell
-  b.formatting.fourmolu,
   --bash
-  b.formatting.beautysh,
+  b.formatting.shfmt,
   --latex
-  b.formatting.latexindent,
-  --rust 
-  b.formatting.rustfmt,
+  require("none-ls.formatting.latexindent"),
   --fsarhp
   b.formatting.fantomas,
+  --markdown
+  b.formatting.mdformat,
 
   --typst
   typstfmt,
