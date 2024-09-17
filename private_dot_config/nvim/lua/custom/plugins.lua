@@ -3,7 +3,37 @@ local telescope = require "telescope"
 
 ---@type NvPluginSpec[]
 local plugins = {
-  "whonore/Coqtail",
+  require('lazy').setup({
+    'nvimdev/lspsaga.nvim',
+    config = function()
+      require('lspsaga').setup({})
+    end,
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter',   -- optional
+      'nvim-tree/nvim-web-devicons',       -- optional
+    }
+  })
+  ,
+  {
+    "nvim-orgmode/orgmode",
+    event = "VeryLazy",
+    ft = { "org" },
+    config = function()
+      -- Setup orgmode
+      require("orgmode").setup {
+        org_agenda_files = "~/orgfiles/**/*",
+        org_default_notes_file = "~/orgfiles/refile.org",
+      }
+
+      -- NOTE: If you are using nvim-treesitter with ~ensure_installed = "all"~ option
+      -- add ~org~ to ignore_install
+      -- require('nvim-treesitter.configs').setup({
+      --   ensure_installed = 'all',
+      --   ignore_install = { 'org' },
+      -- })
+    end,
+  },
+
   {
     "3rd/image.nvim",
     config = function()
@@ -123,6 +153,7 @@ local plugins = {
         "haskell",
         "git_config",
       },
+      ignore_install = { "org" },
       highlight = { enable = true },
     },
   },
