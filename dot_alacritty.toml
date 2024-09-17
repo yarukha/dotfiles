@@ -9,7 +9,7 @@ normal = {family = "Hack Nerd Font"}
 
 [shell]
 args = ["--login","-c","tmux"]
-program = "/usr/local/bin/fish"
+program = "/bin/fish"
 
 [window]
 dynamic_padding = true
