@@ -19,7 +19,7 @@ end
 
 # Hide welcome message
 
-set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
+set -x MANPAGER "sh -c 'bat -l man -p'"
 ## Export variable need for qt-theme
 # if type qtile >>/dev/null 2>&1
     # set -x QT_QPA_PLATFORMTHEME qt5ct
