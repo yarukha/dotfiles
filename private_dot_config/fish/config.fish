@@ -171,11 +171,22 @@ abbr -a -- plugc $EDITOR ~/.config/nvim/lua/custom/plugins.lua
 abbr -a -- tmuxc $EDITOR ~/.tmux.conf
 abbr -a -- zellijc $EDITOR ~/.config/zellij/config.kdl
 abbr -a -- yazic $EDITOR ~/.config/yazi/yazi.toml
-abbr -a -- yy yazi
 
 
-# =============================================================================
-#
+#yazi cwd change
+function yy
+	set tmp (mktemp -t "yazi-cwd.XXXXXX")
+	yazi $argv --cwd-file="$tmp"
+	if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+		builtin cd -- "$cwd"
+	end
+	rm -f -- "$tmp"
+end
+
+
+
+
+
 # Utility functions for zoxide.
 #
 
@@ -276,16 +287,6 @@ alias cdi=__zoxide_zi
 
 abbr -a vi nvim 
 abbr -a vim nvim
-
-#yazi cwd change
-function y
-	set tmp (mktemp -t "yazi-cwd.XXXXXX")
-	yazi $argv --cwd-file="$tmp"
-	if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
-		builtin cd -- "$cwd"
-	end
-	rm -f -- "$tmp"
-end
 
 
 
