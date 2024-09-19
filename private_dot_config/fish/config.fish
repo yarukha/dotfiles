@@ -272,19 +272,10 @@ alias cd=__zoxide_z
 
 abbr --erase cdi &>/dev/null
 alias cdi=__zoxide_zi
-# alias upd="yes | yay -Syu"
-alias upd-ocaml="opam update && opam upgrade -y"
-alias upd-rust="cargo install-update -a"
-# alias upd-haskell="cabal update"
-alias upd-nix="nix-env --install --attr nixpkgs.nix nixpkgs.cacert"
-# abbr -a --position anywhere upd-all "upd && upd-ocaml && upd-rust && upd-nix"
+
 
 abbr -a vi nvim 
 abbr -a vim nvim
-
-if test -f ~/.local/share/chezmoi
-    chezmoi re-add
-end
 
 #yazi cwd change
 function y
