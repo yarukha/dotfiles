@@ -170,6 +170,7 @@ abbr -a -- fmtc $EDITOR ~/.config/nvim/lua/custom/configs/null-ls.lua
 abbr -a -- plugc $EDITOR ~/.config/nvim/lua/custom/plugins.lua
 abbr -a -- tmuxc $EDITOR ~/.tmux.conf
 abbr -a -- zellijc $EDITOR ~/.config/zellij/config.kdl
+abbr -a -- yazic $EDITOR ~/.config/yazi/yazi.toml
 abbr -a -- yy yazi
 
 
@@ -284,6 +285,18 @@ abbr -a vim nvim
 if test -f ~/.local/share/chezmoi
     chezmoi re-add
 end
+
+#yazi cwd change
+function y
+	set tmp (mktemp -t "yazi-cwd.XXXXXX")
+	yazi $argv --cwd-file="$tmp"
+	if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+		builtin cd -- "$cwd"
+	end
+	rm -f -- "$tmp"
+end
+
+
 
 # pyenv configuration
 if test -d ~/.pyenv
