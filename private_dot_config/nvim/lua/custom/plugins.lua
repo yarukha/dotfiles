@@ -4,6 +4,7 @@ local telescope = require "telescope"
 ---@type NvPluginSpec[]
 local plugins = {
   {
+    "AndrewRadev/linediff.vim",
     "nvim-orgmode/orgmode",
     event = "VeryLazy",
     ft = { "org" },
