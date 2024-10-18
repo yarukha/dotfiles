@@ -2,7 +2,12 @@
 x-scheme-handler/tonsite=org.telegram.desktop.desktop
 application/pdf=sioyek.desktop
 x-scheme-handler/discord-455712169795780630=discord-455712169795780630.desktop
+x-scheme-handler/mailto=userapp-Thunderbird-7LJ6V2.desktop
+message/rfc822=userapp-Thunderbird-7LJ6V2.desktop
+x-scheme-handler/mid=userapp-Thunderbird-7LJ6V2.desktop
 
 [Added Associations]
 x-scheme-handler/tonsite=org.telegram.desktop.desktop;
 x-scheme-handler/discord-455712169795780630=discord-455712169795780630.desktop
+x-scheme-handler/mailto=userapp-Thunderbird-7LJ6V2.desktop;
+x-scheme-handler/mid=userapp-Thunderbird-7LJ6V2.desktop;
