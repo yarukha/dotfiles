@@ -12,7 +12,7 @@ local servers = {
   "jedi_language_server",
   "metals",
   "ocamllsp",
-  "typst_lsp",
+  "tinymist",
   "hls",
   "bashls",
   "rust_analyzer",
@@ -28,9 +28,9 @@ for _, lsp in ipairs(servers) do
   }
 end
 
-lspconfig.typst_lsp.setup {
-  on_attach = on_attach,
-}
+-- lspconfig.typst_lsp.setup {
+--   on_attach = on_attach,
+-- }
 
 lspconfig.clangd.setup {
   on_attach = on_attach,
@@ -71,5 +71,3 @@ lspconfig.texlab.setup {
   },
 }
 
---
--- lspconfig.pyright.setup { blabla}
