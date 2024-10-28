@@ -11,7 +11,7 @@ config.default_prog = { "/bin/fish", "--login", "-c", "tmux" }
 -- For example, changing the color scheme:
 config.color_scheme = "Chalk"
 config.font = wezterm.font("Hack Nerd Font")
-config.font_size = 11
+config.font_size = 10
 
 -- hide tab bar
 config.enable_tab_bar = false
