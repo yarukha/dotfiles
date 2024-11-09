@@ -317,9 +317,9 @@ end
 #scala config 
 switch (uname)
   case Darwin
-    if test -d "~/Library/Application Support/Coursier"
-      fish_add_path ~/Library/Application Support/Coursier/bin
-    end 
+    # if test -d "~/Library/Application Support/Coursier"
+    #   fish_add_path ~/Library/Application Support/Coursier/bin
+    # end 
   case Linux 
     if test -d ~/.local/share/coursier
       fish_add_path ~/.local/share/coursier/bin
@@ -343,16 +343,6 @@ switch (uname)
     end
   case "*"
 end
-
-
-# >>> JVM installed by coursier >>>
-set -gx JAVA_HOME "~/Library/Caches/Coursier/arc/https/github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.22%252B7/OpenJDK11U-jdk_x64_mac_hotspot_11.0.22_7.tar.gz/jdk-11.0.22+7/Contents/Home"
-# <<< JVM installed by coursier <<<
-
-# >>> coursier install directory >>>
-set -gx PATH "$PATH:~/Library/Application Support/Coursier/bin"
-# <<< coursier install directory <<<
-#
 
 fzf --fish | source
 
