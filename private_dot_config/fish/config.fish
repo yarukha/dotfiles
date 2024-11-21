@@ -165,11 +165,10 @@ abbr -a -- wezc $EDITOR ~/.config/wezterm/wezterm.lua
 abbr -a -- cm chezmoi
 abbr -a -- fishc $EDITOR ~/.config/fish/config.fish
 abbr -a -- relof source ~/.config/fish/config.fish
-abbr -a -- lspc $EDITOR ~/.config/nvim/lua/custom/configs/lspconfig.lua
-abbr -a -- fmtc $EDITOR ~/.config/nvim/lua/custom/configs/null-ls.lua
-abbr -a -- plugc $EDITOR ~/.config/nvim/lua/custom/plugins.lua
+abbr -a -- lspc $EDITOR ~/.config/nvim/lua/configs/lspconfig.lua
+abbr -a -- fmtc $EDITOR ~/.config/nvim/lua/configs/conform.lua
+abbr -a -- plugc $EDITOR ~/.config/nvim/lua/plugins.lua
 abbr -a -- tmuxc $EDITOR ~/.tmux.conf
-abbr -a -- zellijc $EDITOR ~/.config/zellij/config.kdl
 abbr -a -- yazic $EDITOR ~/.config/yazi/yazi.toml
 
 
