@@ -1,13 +1,20 @@
 return {
 
-
   {
     "neovim/nvim-lspconfig",
     config = function()
-      require "configs.lspconfig"
+      require("configs.lspconfig")
     end,
   },
+  {
+    "stevearc/conform.nvim",
+    config = function()
+      require("conform").setup({
+        formatters_by_ft = require("configs.conform").formatters_by_ft
 
+      })
+    end,
+  },
   "AndrewRadev/linediff.vim",
 
   {
@@ -15,7 +22,6 @@ return {
     lazy = false,
     opts = { separator = "-" },
   },
-
 
   {
     "nvim-treesitter/nvim-treesitter",
@@ -53,8 +59,6 @@ return {
           },
         },
       },
-
-
     },
   },
 
@@ -102,6 +106,4 @@ return {
       },
     },
   },
-
-
 }
