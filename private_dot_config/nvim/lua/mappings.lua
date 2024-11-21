@@ -25,3 +25,9 @@ end, { desc = "Goto prev" })
 map("n", "<leader>fw", function()
   require("telescope").extensions.live_grep_args.live_grep_args()
 end, { desc = "live grep (w/args)" })
+
+map("n", "K",
+  function()
+    vim.lsp.buf.hover()
+  end,
+  { desc = "LSP hover" })

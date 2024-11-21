@@ -1,6 +1,14 @@
 return {
 
-    "AndrewRadev/linediff.vim",
+
+  {
+    "neovim/nvim-lspconfig",
+    config = function()
+      require "configs.lspconfig"
+    end,
+  },
+
+  "AndrewRadev/linediff.vim",
 
   {
     "nvim-treesitter/nvim-treesitter-context",
@@ -33,18 +41,18 @@ return {
   {
     "nvim-tree/nvim-tree.lua",
     opts = {
-  git = {
-    enable = true,
-  },
-
-  renderer = {
-    highlight_git = true,
-    icons = {
-      show = {
-        git = true,
+      git = {
+        enable = true,
       },
-    },
-  },
+
+      renderer = {
+        highlight_git = true,
+        icons = {
+          show = {
+            git = true,
+          },
+        },
+      },
 
 
     },
@@ -60,7 +68,8 @@ return {
         "nvim-telescope/telescope-media-files.nvim",
         "nvim-telescope/telescope-frecency.nvim",
       },
-    },},
+    },
+  },
 
   {
     "lervag/vimtex",
@@ -68,7 +77,7 @@ return {
       -- Use init for configuration, don't use the more common "config".
     end,
   },
-   { "typicode/bg.nvim",      lazy = false },
+  { "typicode/bg.nvim",      lazy = false },
   { "sindrets/diffview.nvim" },
   {
     "kaarmu/typst.vim",
@@ -93,7 +102,6 @@ return {
       },
     },
   },
- 
+
 
 }
- 
