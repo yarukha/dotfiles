@@ -38,6 +38,8 @@ local sources = {
 
   --typst
   typstfmt,
+  --rust
+  b.formatting.rustfmt,
 }
 
 null_ls.setup {
