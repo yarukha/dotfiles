@@ -46,27 +46,43 @@ local plugins = {
   },
   { "nvim-lua/popup.nvim" },
   { "nvim-lua/plenary.nvim" },
-  { "nvim-telescope/telescope.nvim" },
-  {
-    "nvim-telescope/telescope-media-files.nvim",
-    config = function()
-      telescope.load_extension "media_files"
-    end,
-  },
 
   {
-    "davvid/telescope-git-grep.nvim",
-    config = function()
-      telescope.load_extension "frecency"
+    "nvim-telescope/telescope.nvim",
+    dependencies = {
+      {
+        "nvim-telescope/telescope-live-grep-args.nvim",
+        "nvim-telescope/telescope-media-files.nvim",
+        "nvim-telescope/telescope-frecency.nvim",
+      },
+    },
+    opts = function(_, opts)
+      opts.extensions = {
+        live_grep_args = {
+          auto_quoting = true, -- enable/disable auto-quoting
+          -- define mappings, e.g.
+        },
+        -- ... also accepts theme settings, for example:
+        theme = "ivy", -- use dropdown theme
+        -- theme = { }, -- use own theme spec
+        -- layout_config = { mirror=true }, -- mirror preview pane
+      }
+    end,
+    keys = {
+      {
+        "<leader>fw",
+        "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
+        desc = "Grep (root dir)",
+      },
+    },
+    config = function(_, opts)
+      local tele = require "telescope"
+      tele.setup(opts)
+      tele.load_extension "live_grep_args"
+      tele.load_extension "media_files"
+      tele.load_extension "frecency"
     end,
   },
-  {
-    "nvim-telescope/telescope-frecency.nvim",
-    config = function()
-      telescope.load_extension "frecency"
-    end,
-  },
-
   {
     "lervag/vimtex",
     init = function()

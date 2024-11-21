@@ -7,18 +7,18 @@ M.general = {
     -- ["<C-p>"] = { "<cmd> Telescope find_files <CR>" },
     ["<leader>e"] = { "<cmd> setlocal spell!<CR>" },
     -- ["<leader>g"] = { "<cmd> Telescope live_grep <CR>" },
-    ["<leader>i"] = {
-      function()
-        require("nvterm.terminal").toggle "float"
-      end,
-      "Toggle floating term",
-    },
+    -- ["<leader>i"] = {
+    --   function()
+    --     require("nvterm.terminal").toggle "float"
+    --   end,
+    --   "Toggle floating term",
+    -- },
     ["gC"] = {
       function()
         require("treesitter-context").go_to_context(vim.v.count1)
       end,
       "Goto context",
-      {silent = true}
+      { silent = true },
     },
     ["cc"] = {
       function()
@@ -39,15 +39,21 @@ M.general = {
       end,
       "Goto prev",
     },
-  },
-  t = {
-    ["<leader>i"] = {
+    ["<leader>fw"] = {
       function()
-        require("nvterm.terminal").toggle "float"
+        require("telescope").extensions.live_grep_args.live_grep_args()
       end,
-      "Toggle floating term",
+      "live grep (w/args)",
     },
   },
+  -- t = {
+  --   ["<leader>i"] = {
+  --     function()
+  --       require("nvterm.terminal").toggle "float"
+  --     end,
+  --     "Toggle floating term",
+  --   },
+  -- },
 }
 
 -- more keybinds!
