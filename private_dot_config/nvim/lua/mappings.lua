@@ -27,6 +27,27 @@ map("n", "<leader>fw", function()
 	require("telescope").extensions.live_grep_args.live_grep_args()
 end, { desc = "live grep (w/args)" })
 
+--LSP COMMANDS
+map("n", "gd", function()
+	vim.lsp.buf.declaration()
+end, { desc = "goto decl" })
+
+map("n", "gD", function()
+	vim.lsp.buf.definition()
+end, { desc = "goto def" })
+
+map("n", "gr", function()
+	vim.lsp.buf.references()
+end, { desc = "list refs" })
+
+map("n", "gt", function()
+	vim.lsp.buf.type_definition()
+end, { desc = "type def" })
+
+map("n", "ga", function()
+	vim.lsp.buf.code_action()
+end, { desc = "code action" })
+
 map("n", "K", function()
 	vim.lsp.buf.hover()
 end, { desc = "LSP hover" })
