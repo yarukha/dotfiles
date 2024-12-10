@@ -164,6 +164,7 @@ abbr -a -- alac $EDITOR ~/.alacritty.toml
 abbr -a -- wezc $EDITOR ~/.config/wezterm/wezterm.lua
 abbr -a -- cm chezmoi
 abbr -a -- fishc $EDITOR ~/.config/fish/config.fish
+abbr -a -- gitc $EDITOR ~/.gitconfig
 abbr -a -- relof source ~/.config/fish/config.fish
 abbr -a -- lspc $EDITOR ~/.config/nvim/lua/configs/lspconfig.lua
 abbr -a -- fmtc $EDITOR ~/.config/nvim/lua/configs/conform.lua
