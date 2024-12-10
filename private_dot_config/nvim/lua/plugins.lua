@@ -1,5 +1,5 @@
 return {
-
+	{ "xiyaowong/transparent.nvim", lazy = false },
 	{
 		"smoka7/hop.nvim",
 		version = "*",
