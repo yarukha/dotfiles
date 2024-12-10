@@ -24,3 +24,7 @@ email = pauulrobert@gmail.com
 [merge]
   conflictstyle = zdiff3
 
+[pull]
+	rebase = true
+[credential]
+	helper = store

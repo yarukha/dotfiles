@@ -1,6 +1,13 @@
 return {
 
 	{
+		"smoka7/hop.nvim",
+		version = "*",
+		opts = {
+			keys = "etovxqpdygfblzhckisuran",
+		},
+	},
+	{
 		"neovim/nvim-lspconfig",
 		config = function()
 			require("configs.lspconfig")
