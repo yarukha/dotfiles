@@ -1,4 +1,5 @@
 return {
+	{ "tlaplus-community/tlaplus-nvim-plugin", lazy = false },
 	{ "xiyaowong/transparent.nvim", lazy = false },
 	{
 		"smoka7/hop.nvim",
