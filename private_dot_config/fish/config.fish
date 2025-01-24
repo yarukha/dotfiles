@@ -345,4 +345,3 @@ switch (uname)
 end
 
 fzf --fish | source
-

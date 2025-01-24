@@ -20,6 +20,7 @@ local servers = {
   "fsautocomplete",
   "markdown_oxide",
   "denols",
+  "nixd"
 }
 
 for _, lsp in ipairs(servers) do
