@@ -5,7 +5,7 @@ require("nvchad.mappings")
 local map = vim.keymap.set
 
 -- map("n", ";", ":", { desc = "CMD enter command mode" })
-map("i", "ff", "<ESC>")
+map("i", "jj", "<ESC>")
 
 map("n", "<C-b>", "<cmd> NvimTreeToggle<CR>", { desc = "Toggle nvimtree" })
 map("n", "<leader>e", "<cmd> setlocal spell!<CR>", { desc = "Toggle spellcheck" })
