@@ -21,10 +21,10 @@ email = pauulrobert@gmail.com
     # delta detects terminal colors automatically; set one of these to disable auto-detection
     # dark = true
     # light = true
-[merge]
-  conflictstyle = zdiff3
 
 [pull]
 	rebase = true
 [credential]
 	helper = store
+[merge]
+	tool = nvimdiff
