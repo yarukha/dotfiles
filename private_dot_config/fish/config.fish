@@ -288,14 +288,6 @@ alias cdi=__zoxide_zi
 abbr -a vi nvim 
 abbr -a vim nvim
 
-
-
-# pyenv configuration
-if test -d ~/.pyenv
-    fish_add_path ~/.pyenv/bin/
-    pyenv init - | source
-end
-
 #haskell config
 if test -d ~/.ghcup
   fish_add_path ~/.ghcup/bin/

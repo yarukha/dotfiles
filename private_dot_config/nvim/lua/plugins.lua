@@ -90,11 +90,6 @@ return {
 	},
 	{ "typicode/bg.nvim", lazy = false },
 	{ "sindrets/diffview.nvim" },
-	{
-		"kaarmu/typst.vim",
-		ft = "typst",
-		lazy = false,
-	},
 	-- Override plugin definition options
 	{
 		"nvim-tree/nvim-web-devicons",
