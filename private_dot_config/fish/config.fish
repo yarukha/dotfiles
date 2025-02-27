@@ -288,6 +288,11 @@ alias cdi=__zoxide_zi
 abbr -a vi nvim 
 abbr -a vim nvim
 
+#uv config
+uv generate-shell-completion fish | source
+uvx --generate-shell-completion fish | source
+
+
 #haskell config
 if test -d ~/.ghcup
   fish_add_path ~/.ghcup/bin/
