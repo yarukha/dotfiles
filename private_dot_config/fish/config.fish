@@ -292,6 +292,10 @@ abbr -a vim nvim
 uv generate-shell-completion fish | source
 uvx --generate-shell-completion fish | source
 
+#pyenv config 
+if test -d ~/.pyenv/ 
+  pyenv init - fish | source
+end
 
 #haskell config
 if test -d ~/.ghcup
