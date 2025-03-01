@@ -44,12 +44,6 @@ if status --is-interactive
 end
 
 
-## Advanced command-not-found hook
-# if test -d /usr/share/doc/find-the-command/
-#     source /usr/share/doc/find-the-command/ftc.fish
-# end
-
-
 ## Functions
 # Functions needed for !! and !$ https://github.com/oh-my-fish/plugin-bang-bang
 function __history_previous_command
@@ -294,6 +288,7 @@ uvx --generate-shell-completion fish | source
 
 #pyenv config 
 if test -d ~/.pyenv/ 
+  fish_add_path ~/.pyenv/bin/
   pyenv init - fish | source
 end
 
@@ -334,8 +329,6 @@ switch (uname)
       fish_add_path ~/.dotnet/tools/
     end 
 end
-
-
 
 switch (uname)
   case Darwin
