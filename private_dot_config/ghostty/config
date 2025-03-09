@@ -46,5 +46,5 @@
 
 
 initial-command = tmux 
-theme = Popping and Locking
-background-opacity = 0.88
+theme = Everforest Dark - Hard
+background-opacity = 0.93
