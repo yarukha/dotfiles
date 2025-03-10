@@ -284,8 +284,8 @@ abbr -a vi nvim
 abbr -a vim nvim
 
 #uv config
-uv generate-shell-completion fish | source
-uvx --generate-shell-completion fish | source
+#uv generate-shell-completion fish | source
+#uvx --generate-shell-completion fish | source
 
 #pyenv config 
 if test -d ~/.pyenv/ 
