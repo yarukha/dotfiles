@@ -2,6 +2,7 @@ return {
   formatters_by_ft = {
     lua = { "stylua" },
     css = { "prettier" },
+    yml = { "prettier"},
     html = { "prettier" },
     cpp = { "clang-format" },
     ocaml = { "ocamlformat" },
