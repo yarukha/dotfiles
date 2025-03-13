@@ -1,4 +1,25 @@
 return {
+	{
+		"kylechui/nvim-surround",
+		version = "^3.0.0", -- Use for stability; omit to use `main` branch for the latest features
+		event = "VeryLazy",
+		config = function()
+			require("nvim-surround").setup({
+				-- Configuration here, or leave empty to use defaults
+			})
+		end,
+	},
+	{
+		"nvim-neorg/neorg",
+		lazy = false, -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
+		version = "*", -- Pin Neorg to the latest stable release
+		config = require("neorg").setup({
+			load = {
+				["core.defaults"] = {},
+				["core.concealer"] = {}, -- We added this line!
+			},
+		}),
+	},
 	{ "tlaplus-community/tlaplus-nvim-plugin", lazy = false },
 	{ "xiyaowong/transparent.nvim", lazy = false },
 	{

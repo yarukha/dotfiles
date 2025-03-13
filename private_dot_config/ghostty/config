@@ -46,6 +46,6 @@
 
 
 initial-command = tmux 
-theme = Everforest Dark - Hard
-background-opacity = 0.93
+theme = LiquidCarbonTransparent
+background-opacity = 0.97
 app-notifications = no-clipboard-copy

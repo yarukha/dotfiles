@@ -2,7 +2,7 @@
 [user]
 # Please adapt and uncomment the following lines:
 name = Paul Robert
-email = pauulrobert@gmail.com
+email = paul.robert@cea
 [diff]
 	tool = diffview
   prompt = false
