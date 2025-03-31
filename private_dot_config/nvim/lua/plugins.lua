@@ -2,7 +2,10 @@
 -- MAYBE EVEN MAKE A SEPARATE CONFIG FILE FOR PLUGINS WE NEVER CHANGE
 
 return {
-  -- Lean proofs
+	-- vim spreadsheet editing, use <leader>+sc
+	{ "mipmip/vim-scimark", event = { "BufReadPre *.norg", "BufNewFile *.norg" } },
+
+	-- Lean proofs
 	{
 		"Julian/lean.nvim",
 		event = { "BufReadPre *.lean", "BufNewFile *.lean" },
