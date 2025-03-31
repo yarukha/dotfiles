@@ -59,7 +59,6 @@ return {
 				["core.concealer"] = {}, -- We added this line!
 			},
 		}),
-		event = { "BufReadPre *.norg", "BufNewFile *.norg", "BufReadPre *.org", "BufNewFile *.org" },
 	},
 	-- translates ascii symbols into unicode
 	-- { "tlaplus-community/tlaplus-nvim-plugin", lazy = false },
