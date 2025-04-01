@@ -47,5 +47,5 @@
 
 initial-command = tmux 
 theme = LiquidCarbonTransparent
-background-opacity = 0.97
+background-opacity = 0.99
 app-notifications = no-clipboard-copy
