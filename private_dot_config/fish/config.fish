@@ -381,4 +381,3 @@ end
 fzf --fish | source
 
 chezmoi update 
-chezmoi re-add
