@@ -72,19 +72,17 @@ return {
 		end,
 	},
 	-- note taking akin to emacss org mode
-	-- {
-	-- 	"nvim-neorg/neorg",
-	-- 	lazy = false, -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
-	-- 	version = "*", -- Pin Neorg to the latest stable release
-	-- 	config = require("neorg").setup({
-	-- 		load = {
-	-- 			["core.defaults"] = {},
-	-- 			["core.concealer"] = {}, -- We added this line!
-	-- 		},
-	-- 	}),
-	-- },
-	-- translates ascii symbols into unicode
-	-- { "tlaplus-community/tlaplus-nvim-plugin", lazy = false },
+	{
+		"nvim-neorg/neorg",
+		lazy = false, -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
+		version = "*", -- Pin Neorg to the latest stable release
+		config = require("neorg").setup({
+			load = {
+				["core.defaults"] = {},
+				["core.concealer"] = {}, -- We added this line!
+			},
+		}),
+	},
 
 	-- enable transparency
 	{ "xiyaowong/transparent.nvim", lazy = false },
