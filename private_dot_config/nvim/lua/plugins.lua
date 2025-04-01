@@ -2,6 +2,29 @@
 -- MAYBE EVEN MAKE A SEPARATE CONFIG FILE FOR PLUGINS WE NEVER CHANGE
 
 return {
+
+	-- lazygit inside nvim
+	{
+		"kdheepak/lazygit.nvim",
+		lazy = true,
+		cmd = {
+			"LazyGit",
+			"LazyGitConfig",
+			"LazyGitCurrentFile",
+			"LazyGitFilter",
+			"LazyGitFilterCurrentFile",
+		},
+		-- optional for floating window border decoration
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+		},
+		-- setting the keybinding for LazyGit with 'keys' is recommended in
+		-- order to load the plugin when the command is run for the first time
+		keys = {
+			{ "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" },
+		},
+	},
+
 	-- vim spreadsheet editing, use <leader>+sc
 	{ "mipmip/vim-scimark", event = { "BufReadPre *.norg", "BufNewFile *.norg" } },
 
@@ -49,17 +72,17 @@ return {
 		end,
 	},
 	-- note taking akin to emacss org mode
-	{
-		"nvim-neorg/neorg",
-		lazy = false, -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
-		version = "*", -- Pin Neorg to the latest stable release
-		config = require("neorg").setup({
-			load = {
-				["core.defaults"] = {},
-				["core.concealer"] = {}, -- We added this line!
-			},
-		}),
-	},
+	-- {
+	-- 	"nvim-neorg/neorg",
+	-- 	lazy = false, -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
+	-- 	version = "*", -- Pin Neorg to the latest stable release
+	-- 	config = require("neorg").setup({
+	-- 		load = {
+	-- 			["core.defaults"] = {},
+	-- 			["core.concealer"] = {}, -- We added this line!
+	-- 		},
+	-- 	}),
+	-- },
 	-- translates ascii symbols into unicode
 	-- { "tlaplus-community/tlaplus-nvim-plugin", lazy = false },
 
