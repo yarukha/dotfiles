@@ -31,6 +31,8 @@ return {
 		"nvim-neorg/neorg",
 		lazy = false,
 		version = "*",
+		keys = { { "<leader>tc", "<cmd>Neorg toc<CR>", desc = "NeorgTableofContents" } },
+
 		config = function()
 			require("neorg").setup({
 				load = {
@@ -44,6 +46,7 @@ return {
 							default_workspace = "notes",
 						},
 					},
+					["core.latex.renderer"] = {},
 				},
 			})
 		end,

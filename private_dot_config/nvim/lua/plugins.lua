@@ -7,6 +7,8 @@ local utils_plugins = require("plugins.utils")
 local all_plugins = vim.list_extend({}, prover_plugins)
 all_plugins = vim.list_extend(all_plugins, utils_plugins)
 table.insert(all_plugins, {
+	-- images
+	{ "3rd/image.nvim" },
 	-- vim spreadsheet editing, use <leader>+sc
 	{ "mipmip/vim-scimark", event = { "BufReadPre *.norg", "BufNewFile *.norg" } },
 
@@ -21,29 +23,6 @@ table.insert(all_plugins, {
 			})
 		end,
 	},
-	-- note taking akin to emacss org mode
-	{
-		"nvim-neorg/neorg",
-		lazy = false,
-		version = "*",
-		config = function()
-			require("neorg").setup({
-				load = {
-					["core.defaults"] = {},
-					["core.concealer"] = {},
-					["core.dirman"] = {
-						config = {
-							workspaces = {
-								notes = "~/notes",
-							},
-							default_workspace = "notes",
-						},
-					},
-				},
-			})
-		end,
-	},
-
 	-- enable transparency
 	{ "xiyaowong/transparent.nvim", lazy = false },
 
