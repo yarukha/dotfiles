@@ -1,65 +1,15 @@
+local prover_plugins = require("plugins.provers")
+local utils_plugins = require("plugins.utils")
+
 -- THESE SHOULD BE ORDERED BY IMPORTANCE, WITH THE ONES MORE LIKELY TO BE REMOVED ON TOP
 -- MAYBE EVEN MAKE A SEPARATE CONFIG FILE FOR PLUGINS WE NEVER CHANGE
 
-return {
-
-	-- lazygit inside nvim
-	{
-		"kdheepak/lazygit.nvim",
-		lazy = true,
-		cmd = {
-			"LazyGit",
-			"LazyGitConfig",
-			"LazyGitCurrentFile",
-			"LazyGitFilter",
-			"LazyGitFilterCurrentFile",
-		},
-		-- optional for floating window border decoration
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-		},
-		-- setting the keybinding for LazyGit with 'keys' is recommended in
-		-- order to load the plugin when the command is run for the first time
-		keys = {
-			{ "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" },
-		},
-	},
-
+local all_plugins = vim.list_extend({}, prover_plugins)
+all_plugins = vim.list_extend(all_plugins, utils_plugins)
+table.insert(all_plugins, {
 	-- vim spreadsheet editing, use <leader>+sc
 	{ "mipmip/vim-scimark", event = { "BufReadPre *.norg", "BufNewFile *.norg" } },
 
-	-- Lean proofs
-	{
-		"Julian/lean.nvim",
-		event = { "BufReadPre *.lean", "BufNewFile *.lean" },
-
-		dependencies = {
-			"neovim/nvim-lspconfig",
-			"nvim-lua/plenary.nvim",
-
-			-- optional dependencies:
-
-			-- a completion engine
-			--    hrsh7th/nvim-cmp or Saghen/blink.cmp are popular choices
-
-			-- 'nvim-telescope/telescope.nvim', -- for 2 Lean-specific pickers
-			-- 'andymass/vim-matchup',          -- for enhanced % motion behavior
-			-- 'andrewradev/switch.vim',        -- for switch support
-			-- 'tomtom/tcomment_vim',           -- for commenting
-		},
-
-		---@type lean.Config
-		opts = { -- see below for full configuration options
-			mappings = true,
-		},
-	},
-
-	-- Agda proofs
-	"ashinkarov/nvim-agda",
-	-- Isabelle proofs
-	"Treeniks/isabelle-lsp.nvim",
-	-- coq proofs
-	{ "whonore/Coqtail" },
 	-- new surround actions, use ysiw ""
 	{
 		"kylechui/nvim-surround",
@@ -74,14 +24,24 @@ return {
 	-- note taking akin to emacss org mode
 	{
 		"nvim-neorg/neorg",
-		lazy = false, -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
-		version = "*", -- Pin Neorg to the latest stable release
-		config = require("neorg").setup({
-			load = {
-				["core.defaults"] = {},
-				["core.concealer"] = {}, -- We added this line!
-			},
-		}),
+		lazy = false,
+		version = "*",
+		config = function()
+			require("neorg").setup({
+				load = {
+					["core.defaults"] = {},
+					["core.concealer"] = {},
+					["core.dirman"] = {
+						config = {
+							workspaces = {
+								notes = "~/notes",
+							},
+							default_workspace = "notes",
+						},
+					},
+				},
+			})
+		end,
 	},
 
 	-- enable transparency
@@ -197,4 +157,6 @@ return {
 			},
 		},
 	},
-}
+})
+
+return all_plugins
